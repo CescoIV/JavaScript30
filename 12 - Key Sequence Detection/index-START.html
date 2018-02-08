@@ -7,6 +7,17 @@
 </head>
 <body>
 <script>
+const pressed =[];
+const secretCode = 'password';
+
+window.addEventListener('keyup', (e)=>{
+	pressed.push(e.key);
+	pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+
+	if(pressed.join('').includes(secretCode)){
+		alert('DING DING YOU KNOW THE PASSWORD');
+	}
+})
 </script>
 </body>
 </html>
